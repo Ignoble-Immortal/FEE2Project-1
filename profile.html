@@ -11,14 +11,8 @@
     <link href="./src/output.css" rel="stylesheet">
     <link rel="stylesheet" href="./src/input.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" /> 
-    <!-- <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  -->
-    <!-- <link rel="stylesheet" href="style.css"> -->
     <!-------Meta Tags - BOOSTING -->
     <meta property="og:title" content="Github Profile Viewer">
     <meta property="og:description" content="View your github stats in one go!">
@@ -74,7 +68,7 @@
                         <div>
                             <h1 class="text-2xl md:text-4xl items-center">${profileData.name}</h1>
                             <a class="flex items-center pt-1 text-lg md:text-xl gap-2" href="${profileData.html_url}">
-                                <h2 class="text-slate-600 hover:text-blue-500">${profileData.login}</h2>
+                                <h2 class="text-black font-bold hover:text-blue-500">${profileData.login}</h2>
                                 <h2 class="text-blue-500 hover:text-slate-600"><i class="bi bi-arrow-up-right"></i></h2>
                             </a>
                         </div>
@@ -123,38 +117,44 @@
         <div class="p-4 md:w-1/3">
           <div class="flex rounded-lg h-full p-8 flex-col bg-black bg-opacity-25 bg-blur-2xl overflow-hidden">
             <div class="flex items-center mb-3">
-                <h2><a class="flex text-xl md:text-3xl hover:text-blue-500" href="${repo.html_url}" target="_blank" rel="noopener noreferrer">${repo.name}</a></h2>
+                <h2><a class="flex text-xl md:text-3xl text-black font-bold hover:text-blue-500" href="${repo.html_url}" target="_blank" rel="noopener noreferrer">${repo.name}</a></h2>
             </div>
             <div class="flex-grow">
-                <h1>Language: ${repo.language}</h1>
-                <p class="flex gap-2 text-xs lg:text-sm xl:text-base leading-relaxed">Description: ${repo.description}</p>
+                <p class="flex gap-2 text-xs lg:text-sm xl:text-base leading-relaxed"></p>
                 <h1 class="flex gap-2 text-xs lg:text-sm xl:text-base leading-relaxed">
-                    <p>Created:</p>
-                    <p>${formatDate(repo.created_at)}</p>
+                    <p class="text-black font-bold text-xl">Language: </p>
+                    <p class="text-white">${repo.language}</p>
                 </h1>
                 <h1 class="flex gap-2 text-xs lg:text-sm xl:text-base leading-relaxed">
-                    <p>Updated:</p>
-                    <p>${formatDate(repo.updated_at)}</p>
+                    <p class="text-black font-bold text-xl">Description: <span class="text-white font-medium text-base">${repo.description}</span></p>
                 </h1>
                 <h1 class="flex gap-2 text-xs lg:text-sm xl:text-base leading-relaxed">
-                    <p>Pushed:</p>
-                    <p>${formatDate(repo.pushed_at)}</p>
+                    <p class="text-black font-bold text-xl">Created: </p>
+                    <p class="text-white">${formatDate(repo.created_at)}</p>
+                </h1>
+                <h1 class="flex gap-2 text-xs lg:text-sm xl:text-base leading-relaxed">
+                    <p class="text-black font-bold text-xl">Updated: </p>
+                    <p class="text-white">${formatDate(repo.updated_at)}</p>
+                </h1>
+                <h1 class="flex gap-2 text-xs lg:text-sm xl:text-base leading-relaxed">
+                    <p class="text-black font-bold text-xl">Pushed: </p>
+                    <p class="text-white">${formatDate(repo.pushed_at)}</p>
                 </h1>
               <a class="mt-3 text-indigo-500 inline-flex items-center">
                 <div class="text-xs md:text-sm flex gap-1 lg:gap-2 items-center">
                     <p><span class="material-icons-outlined"><ion-icon name="star-outline"></ion-icon></span></p>
-                    <p>${repo.stargazers_count}</p>
-                    <h1>Stars</h1>
+                    <p class="text-base font-bold">${repo.stargazers_count}</p>
+                    <h1 class="text-base font-bold">Stars</h1>
                 </div>
                 <div class="text-xs md:text-sm flex gap-1 lg:gap-2 items-center">
                     <p><span class="material-icons-outlined"><i class="fa fa-code-fork" aria-hidden="true"></i></span></p>
-                    <p>${repo.forks}</p>
-                    <h1>Fork</h1>
+                    <p class="text-base font-bold">${repo.forks}</p>
+                    <h1 class="text-base font-bold">Fork</h1>
                 </div>
                 <div class="text-xs md:text-sm flex gap-1 lg:gap-2 items-center">
                     <p><span class="material-icons-outlined"><ion-icon name="alert-circle-outline"></ion-icon></span></p>
-                    <p>${repo.open_issues}</p>
-                    <h1>Issues</h1>
+                    <p class="text-base font-bold">${repo.open_issues}</p>
+                    <h1 class="text-base font-bold">Issues</h1>
                 </div>
               </a>
             </div>
