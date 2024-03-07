@@ -26,8 +26,12 @@
     <meta property="og:site_name" content="Github Profile Viewer">
 </head>
 
-<body class="text-white">
-    <div class="container mx-auto p-5">
+<body class="text-white relative">
+    <video autoplay loop muted class="fixed z-0 inset-0 object-cover w-full h-full" id="video-background">
+        <source src="pink.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="container mx-auto p-5 relative z-10">
 
 
         <!-- Profile Section -->
@@ -82,23 +86,23 @@
                     <!-- Profile Stats -->
                     <div class="grid gap-1 mt-2">
                         <div class="flex gap-2 lg:text-lg items-center">
-                            <h1 class="text-slate-600">Repositories:</h1>
+                            <h1 class="text-black font-bold text-xl">Repositories:</h1>
                             <h1 class="text-base lg:text-xl">${profileData.public_repos}</h1>
                         </div>
                         <div class="flex gap-2 lg:text-lg items-center">
-                            <h2 class="text-slate-600">Followers:</h2>
+                            <h2 class="text-black font-bold text-xl">Followers:</h2>
                             <h2 class="text-base lg:text-xl">${profileData.followers}</h2>
                         </div>
                         <div class="flex gap-2 lg:text-lg items-center">
-                            <h2 class="text-slate-600">Following:</h2>
+                            <h2 class="text-black font-bold text-xl">Following:</h2>
                             <h2 class="text-base lg:text-xl">${profileData.following}</h2>
                         </div>
                         <div class="flex gap-2 items-center">
-                            <p class="text-slate-600">Github User Since:</p>
+                            <p class="text-black font-bold text-xl">Github User Since:</p>
                             <p>${formatDate(profileData.created_at)}</p>
                         </div>
                         <div class="flex gap-2 items-center">
-                            <p class="text-slate-600">Last Active:</p>
+                            <p class="text-black font-bold text-xl">Last Active:</p>
                             <p>${formatDate(profileData.updated_at)}</p>
                         </div>
                     </div>
@@ -117,7 +121,7 @@
                 reposData.forEach(repo => {
                     repositoryElement.innerHTML += `
         <div class="p-4 md:w-1/3">
-          <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col overflow-hidden">
+          <div class="flex rounded-lg h-full p-8 flex-col bg-black bg-opacity-25 bg-blur-2xl overflow-hidden">
             <div class="flex items-center mb-3">
                 <h2><a class="flex text-xl md:text-3xl hover:text-blue-500" href="${repo.html_url}" target="_blank" rel="noopener noreferrer">${repo.name}</a></h2>
             </div>
