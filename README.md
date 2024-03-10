@@ -22,13 +22,13 @@ TOOLS USED
 FEATURES
 -----
 
+Take a peek at this GitHub profile viewer that shows you your activity! It includes stats on your repositories. You can also see followers as well as following.You can search anyone's profile and see all the information you need about them.
+-----
+
 USAGE
 1. Enter a GitHub username in the input field.
 2. Click on the 'View' button.
 3. The user's public information will be displayed in a card UI.
------
-
-Take a peek at this GitHub profile viewer that shows you your activity! It includes stats on your repositories. You can also see followers as well as following.You can search anyone's profile and see all the information you need about them.
 -----
 
 AUTHORS
