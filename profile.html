@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Github Repo</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Github Profile</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="custom.css" />
     <link href="./src/output.css" rel="stylesheet">
@@ -13,7 +12,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-------Meta Tags - BOOSTING -->
     <meta property="og:title" content="Github Profile Viewer">
     <meta property="og:description" content="View your github stats in one go!">
     <meta property="og:image" content="https://cdn.discordapp.com/attachments/764006962370445352/1209892805535727616/BowlPulp__5_-removebg-preview.png?ex=65e8937b&is=65d61e7b&hm=d99b1a92c5c663afd3971e143ad41bbf7545daaf02f8cd7acd6d53aba652af6f&">
@@ -22,7 +20,7 @@
 
 <body class="text-white relative">
     <video autoplay loop muted class="fixed z-0 inset-0 object-cover w-full h-full" id="video-background">
-        <source src="pink.mp4" type="video/mp4">
+        <source src="Untitled1.mov" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     <div class="container mx-auto p-5 relative z-10">
@@ -32,42 +30,33 @@
                 <div class="container px-5 py-10 mx-auto">
                   <div class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
                       <input type="search" class="form-control rounded w-full bg-gray-100 bg-opacity-50 border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-black font-bold py-1 px-3 leading-8 transition-colors duration-200 ease-in-out placeholder-black" placeholder="Enter a Github Username" aria-label="Search" aria-describedby="search-addon" id="username"/>
-                      <button onclick="viewGitHubProfile()" type="button" class="btn btn-outline-light text-white bg-black bg-opacity-25 bg-blur-2xl rounded-xl shadow-md p-4 border-0 py-2 px-8 focus:outline-none hover:bg-red-700 text-lg" data-mdb-ripple-init style="margin-left: 2rem;">View</button>
+                      <button onclick="viewGitHubProfile()" type="button" class="btn btn-outline-light text-white bg-black bg-opacity-25 bg-blur-2xl rounded-xl shadow-md p-4 border-0 py-2 px-8 focus:outline-none hover:bg-blue-500 text-lg" data-mdb-ripple-init style="margin-left: 2rem;">View</button>
                   </div>
                 </div>
             </section>
         </div>
 
-
-        <!-- Profile Section -->
         <div id="profile" class="grid md:grid-cols-2 grid-cols-1 gap-5 xl:grid-cols-3 bg-black bg-opacity-25 bg-blur-2xl rounded-xl shadow-md p-4">
-            <!-- Profile Information will be populated dynamically by JavaScript -->
         </div>
 
-        <!-- Repository Section -->
         <section class="text-gray-600 body-font flex p-4 mt-5">
             <div id="repositories" class="flex flex-wrap -m-4">
             </div>
         </section>
     </div>
 
-    <!-- JavaScript Section -->
     <script>
-        // Define formatDate function to format date strings
         const formatDate = (dateString) => {
             const date = new Date(dateString);
-            return date.toLocaleDateString(); // This will return the date portion in the local date format
+            return date.toLocaleDateString();
         };
 
-        // Fetch username from the URL
         const urlParams = new URLSearchParams(window.location.search);
         const username = urlParams.get('username');
-
-        // Fetch profile data from GitHub API using the username
         fetch(`https://api.github.com/users/${username}`)
             .then(response => response.json())
             .then(profileData => {
-                // Populate profile section with profileData
+
                 const profileElement = document.querySelector('#profile');
                 profileElement.innerHTML = `
                 <div class="flex justify-center items-center rounded-full w-auto">
@@ -115,11 +104,9 @@
             })
             .catch(error => console.error('Error fetching profile data:', error));
 
-        // Fetch repository data from GitHub API using the username
         fetch(`https://api.github.com/users/${username}/repos`)
             .then(response => response.json())
             .then(reposData => {
-                // Populate repository section with reposData
                 const repositoryElement = document.querySelector('#repositories');
                 repositoryElement.innerHTML = '';
 
@@ -179,7 +166,7 @@
         function viewGitHubProfile() {
             const username = document.getElementById('username').value;
             if (!username) {
-                alert('Please enter a GitHub username.');
+                alert('Please enter a GitHub Username.');
                 return;
             }
             window.location.href = `profile.html?username=${username}`;
