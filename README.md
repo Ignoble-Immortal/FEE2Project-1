@@ -3,7 +3,7 @@ OVERVIEW
 
 ![Screenshot 2024-03-10 221258](https://github.com/Ignoble-Immortal/FEE2Project-1/assets/123066928/a800d78d-4e32-402d-b938-6c487ed80ddf)
 
-![Screenshot 2024-03-10 221415](https://github.com/Ignoble-Immortal/FEE2Project-1/assets/123066928/0034fe8a-2df4-4bdd-aefa-738fc4356bcb)
+![Screenshot 2024-03-11 105740](https://github.com/Ignoble-Immortal/FEE2Project-1/assets/123066928/2dbf2568-d3e4-46dc-b3a6-b0e4cdbe62ea)
 
 Website is live at:- https://githubprofileviewerteam2.netlify.app/
 -----
