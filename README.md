@@ -5,7 +5,7 @@ OVERVIEW
 
 ![Screenshot 2024-03-11 105740](https://github.com/Ignoble-Immortal/FEE2Project-1/assets/123066928/2dbf2568-d3e4-46dc-b3a6-b0e4cdbe62ea)
 
-Website is live at:- https://githubprofileviewerteam2.netlify.app/
+Website is live at:- https://githubprofileviewerfee2pro1.netlify.app/
 -----
 
 TOOLS USED
